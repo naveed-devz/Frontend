@@ -61,22 +61,37 @@
 //clousure
 
 
-function counter (){
-    let count = 0;
+// function counter (){
+//     let count = 0;
 
-    return{
-        increment:function(){count++
-            console.log(count);
-        },
-        decrement:function(){
-            count--
-            console.log(count)
+//     return{
+//         increment:function(){count++
+//             console.log(count);
+//         },
+//         decrement:function(){
+//             count--
+//             console.log(count)
+//         }
+//     }
+// }
+
+// const myCounter = counter();
+
+// myCounter.increment();
+// myCounter.increment();
+// myCounter.decrement();
+
+
+const  nums = [1, 2, 3, 4,1,2,9];
+
+function unique(nums){
+    let newNums = nums.sort((a,b) => a-b);
+    let uni = [];
+    for(let i=0;i<newNums.length;i++){
+        if(newNums[i] !== newNums[i+1] && newNums[i] !== newNums[i-1]){
+            uni.push(newNums[i])
         }
     }
+return uni;
 }
-
-const myCounter = counter();
-
-myCounter.increment();
-myCounter.increment();
-myCounter.decrement();
+console.log(unique(nums))
